@@ -23,6 +23,26 @@
 		8BBF05EA249D6737009F9A65 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05E9249D6737009F9A65 /* HTTPTask.swift */; };
 		8BBF05EC249D6750009F9A65 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05EB249D6750009F9A65 /* Router.swift */; };
 		8BBF05EE249D676E009F9A65 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05ED249D676E009F9A65 /* EndPointType.swift */; };
+		8BBF05F1249D683E009F9A65 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05F0249D683E009F9A65 /* Games.swift */; };
+		8BBF05F3249D6AC3009F9A65 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05F2249D6AC3009F9A65 /* Game.swift */; };
+		8BBF05F5249D6BED009F9A65 /* SearchedGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05F4249D6BED009F9A65 /* SearchedGames.swift */; };
+		8BBF05F7249D6D54009F9A65 /* JSONNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05F6249D6D54009F9A65 /* JSONNull.swift */; };
+		8BBF05F9249D6F5C009F9A65 /* GamesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05F8249D6F5C009F9A65 /* GamesResult.swift */; };
+		8BBF05FB249D6F98009F9A65 /* AddedByStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05FA249D6F98009F9A65 /* AddedByStatus.swift */; };
+		8BBF05FD249D6FB7009F9A65 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05FC249D6FB7009F9A65 /* Filters.swift */; };
+		8BBF05FF249D6FCA009F9A65 /* FiltersYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05FE249D6FCA009F9A65 /* FiltersYear.swift */; };
+		8BBF0601249D6FDC009F9A65 /* YearYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0600249D6FDC009F9A65 /* YearYear.swift */; };
+		8BBF0603249D6FED009F9A65 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0602249D6FED009F9A65 /* Clip.swift */; };
+		8BBF0605249D7001009F9A65 /* Clips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0604249D7001009F9A65 /* Clips.swift */; };
+		8BBF0607249D7015009F9A65 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0606249D7015009F9A65 /* Genre.swift */; };
+		8BBF0609249D702B009F9A65 /* ParentPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0608249D702B009F9A65 /* ParentPlatform.swift */; };
+		8BBF060B249D7038009F9A65 /* ParentPlatformPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF060A249D7038009F9A65 /* ParentPlatformPlatform.swift */; };
+		8BBF060D249D7047009F9A65 /* PlatformElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF060C249D7047009F9A65 /* PlatformElement.swift */; };
+		8BBF060F249D7059009F9A65 /* PlatformPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF060E249D7059009F9A65 /* PlatformPlatform.swift */; };
+		8BBF0611249D7069009F9A65 /* Requirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0610249D7069009F9A65 /* Requirements.swift */; };
+		8BBF0613249D7078009F9A65 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0612249D7078009F9A65 /* Rating.swift */; };
+		8BBF0615249D7093009F9A65 /* ShortScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0614249D7093009F9A65 /* ShortScreenshot.swift */; };
+		8BBF0617249D70A1009F9A65 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0616249D70A1009F9A65 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +76,26 @@
 		8BBF05E9249D6737009F9A65 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 		8BBF05EB249D6750009F9A65 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8BBF05ED249D676E009F9A65 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		8BBF05F0249D683E009F9A65 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
+		8BBF05F2249D6AC3009F9A65 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		8BBF05F4249D6BED009F9A65 /* SearchedGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedGames.swift; sourceTree = "<group>"; };
+		8BBF05F6249D6D54009F9A65 /* JSONNull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNull.swift; sourceTree = "<group>"; };
+		8BBF05F8249D6F5C009F9A65 /* GamesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesResult.swift; sourceTree = "<group>"; };
+		8BBF05FA249D6F98009F9A65 /* AddedByStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedByStatus.swift; sourceTree = "<group>"; };
+		8BBF05FC249D6FB7009F9A65 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		8BBF05FE249D6FCA009F9A65 /* FiltersYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersYear.swift; sourceTree = "<group>"; };
+		8BBF0600249D6FDC009F9A65 /* YearYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearYear.swift; sourceTree = "<group>"; };
+		8BBF0602249D6FED009F9A65 /* Clip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
+		8BBF0604249D7001009F9A65 /* Clips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clips.swift; sourceTree = "<group>"; };
+		8BBF0606249D7015009F9A65 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		8BBF0608249D702B009F9A65 /* ParentPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentPlatform.swift; sourceTree = "<group>"; };
+		8BBF060A249D7038009F9A65 /* ParentPlatformPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentPlatformPlatform.swift; sourceTree = "<group>"; };
+		8BBF060C249D7047009F9A65 /* PlatformElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformElement.swift; sourceTree = "<group>"; };
+		8BBF060E249D7059009F9A65 /* PlatformPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPlatform.swift; sourceTree = "<group>"; };
+		8BBF0610249D7069009F9A65 /* Requirements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requirements.swift; sourceTree = "<group>"; };
+		8BBF0612249D7078009F9A65 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		8BBF0614249D7093009F9A65 /* ShortScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortScreenshot.swift; sourceTree = "<group>"; };
+		8BBF0616249D70A1009F9A65 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				8BBF05BD249D5BE4009F9A65 /* LeanScale.xcdatamodeld */,
+				8BBF0618249D716D009F9A65 /* Base Models */,
+				8BBF0619249D717A009F9A65 /* Sub Models */,
+				8BBF061A249D719A009F9A65 /* Nullable */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +223,47 @@
 				8BBF05DD249D652E009F9A65 /* NetworkLogger.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		8BBF0618249D716D009F9A65 /* Base Models */ = {
+			isa = PBXGroup;
+			children = (
+				8BBF05F0249D683E009F9A65 /* Games.swift */,
+				8BBF05F2249D6AC3009F9A65 /* Game.swift */,
+				8BBF05F4249D6BED009F9A65 /* SearchedGames.swift */,
+			);
+			path = "Base Models";
+			sourceTree = "<group>";
+		};
+		8BBF0619249D717A009F9A65 /* Sub Models */ = {
+			isa = PBXGroup;
+			children = (
+				8BBF05F8249D6F5C009F9A65 /* GamesResult.swift */,
+				8BBF05FE249D6FCA009F9A65 /* FiltersYear.swift */,
+				8BBF0600249D6FDC009F9A65 /* YearYear.swift */,
+				8BBF0602249D6FED009F9A65 /* Clip.swift */,
+				8BBF0604249D7001009F9A65 /* Clips.swift */,
+				8BBF0606249D7015009F9A65 /* Genre.swift */,
+				8BBF0608249D702B009F9A65 /* ParentPlatform.swift */,
+				8BBF060A249D7038009F9A65 /* ParentPlatformPlatform.swift */,
+				8BBF060C249D7047009F9A65 /* PlatformElement.swift */,
+				8BBF060E249D7059009F9A65 /* PlatformPlatform.swift */,
+				8BBF0610249D7069009F9A65 /* Requirements.swift */,
+				8BBF0612249D7078009F9A65 /* Rating.swift */,
+				8BBF0614249D7093009F9A65 /* ShortScreenshot.swift */,
+				8BBF0616249D70A1009F9A65 /* Store.swift */,
+				8BBF05FC249D6FB7009F9A65 /* Filters.swift */,
+				8BBF05FA249D6F98009F9A65 /* AddedByStatus.swift */,
+			);
+			path = "Sub Models";
+			sourceTree = "<group>";
+		};
+		8BBF061A249D719A009F9A65 /* Nullable */ = {
+			isa = PBXGroup;
+			children = (
+				8BBF05F6249D6D54009F9A65 /* JSONNull.swift */,
+			);
+			path = Nullable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,16 +369,36 @@
 			files = (
 				8BBF05EC249D6750009F9A65 /* Router.swift in Sources */,
 				8BBF05E4249D668F009F9A65 /* URLParameterEncoding.swift in Sources */,
+				8BBF0605249D7001009F9A65 /* Clips.swift in Sources */,
 				8BBF05E2249D667B009F9A65 /* ParameterEncoding.swift in Sources */,
+				8BBF05F1249D683E009F9A65 /* Games.swift in Sources */,
+				8BBF0609249D702B009F9A65 /* ParentPlatform.swift in Sources */,
 				8BBF05B9249D5BE4009F9A65 /* ViewController.swift in Sources */,
+				8BBF0611249D7069009F9A65 /* Requirements.swift in Sources */,
+				8BBF060F249D7059009F9A65 /* PlatformPlatform.swift in Sources */,
 				8BBF05DE249D652E009F9A65 /* NetworkLogger.swift in Sources */,
 				8BBF05E0249D660B009F9A65 /* HTTPMethod.swift in Sources */,
+				8BBF05FB249D6F98009F9A65 /* AddedByStatus.swift in Sources */,
+				8BBF0613249D7078009F9A65 /* Rating.swift in Sources */,
 				8BBF05E6249D669C009F9A65 /* JSONParameterEncoder.swift in Sources */,
+				8BBF05FD249D6FB7009F9A65 /* Filters.swift in Sources */,
+				8BBF0615249D7093009F9A65 /* ShortScreenshot.swift in Sources */,
 				8BBF05EA249D6737009F9A65 /* HTTPTask.swift in Sources */,
+				8BBF0601249D6FDC009F9A65 /* YearYear.swift in Sources */,
+				8BBF05F9249D6F5C009F9A65 /* GamesResult.swift in Sources */,
+				8BBF0617249D70A1009F9A65 /* Store.swift in Sources */,
+				8BBF05F3249D6AC3009F9A65 /* Game.swift in Sources */,
+				8BBF0607249D7015009F9A65 /* Genre.swift in Sources */,
+				8BBF060B249D7038009F9A65 /* ParentPlatformPlatform.swift in Sources */,
+				8BBF05F5249D6BED009F9A65 /* SearchedGames.swift in Sources */,
+				8BBF05FF249D6FCA009F9A65 /* FiltersYear.swift in Sources */,
 				8BBF05EE249D676E009F9A65 /* EndPointType.swift in Sources */,
+				8BBF060D249D7047009F9A65 /* PlatformElement.swift in Sources */,
 				8BBF05B5249D5BE4009F9A65 /* AppDelegate.swift in Sources */,
 				8BBF05BF249D5BE4009F9A65 /* LeanScale.xcdatamodeld in Sources */,
+				8BBF05F7249D6D54009F9A65 /* JSONNull.swift in Sources */,
 				8BBF05B7249D5BE4009F9A65 /* SceneDelegate.swift in Sources */,
+				8BBF0603249D6FED009F9A65 /* Clip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
