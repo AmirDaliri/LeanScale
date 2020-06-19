@@ -15,6 +15,11 @@
 		8BBF05C1249D5BE5009F9A65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BBF05C0249D5BE5009F9A65 /* Assets.xcassets */; };
 		8BBF05C4249D5BE5009F9A65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BBF05C2249D5BE5009F9A65 /* LaunchScreen.storyboard */; };
 		8BBF05CF249D5BE5009F9A65 /* LeanScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05CE249D5BE5009F9A65 /* LeanScaleTests.swift */; };
+		8BBF05DE249D652E009F9A65 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05DD249D652E009F9A65 /* NetworkLogger.swift */; };
+		8BBF05E0249D660B009F9A65 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05DF249D660B009F9A65 /* HTTPMethod.swift */; };
+		8BBF05E2249D667B009F9A65 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05E1249D667B009F9A65 /* ParameterEncoding.swift */; };
+		8BBF05E4249D668F009F9A65 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05E3249D668F009F9A65 /* URLParameterEncoding.swift */; };
+		8BBF05E6249D669C009F9A65 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05E5249D669C009F9A65 /* JSONParameterEncoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		8BBF05CA249D5BE5009F9A65 /* LeanScaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeanScaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBF05CE249D5BE5009F9A65 /* LeanScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanScaleTests.swift; sourceTree = "<group>"; };
 		8BBF05D0249D5BE5009F9A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BBF05DD249D652E009F9A65 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		8BBF05DF249D660B009F9A65 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		8BBF05E1249D667B009F9A65 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		8BBF05E3249D668F009F9A65 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
+		8BBF05E5249D669C009F9A65 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 			children = (
 				8BBF05B4249D5BE4009F9A65 /* AppDelegate.swift */,
 				8BBF05B6249D5BE4009F9A65 /* SceneDelegate.swift */,
+				8BBF05E8249D66E4009F9A65 /* Networking */,
 				8BBF05DC249D5FE4009F9A65 /* Models */,
 				8BBF05D9249D5FBA009F9A65 /* Controller */,
 				8BBF05DA249D5FC7009F9A65 /* StoryBoards */,
@@ -132,6 +143,26 @@
 				8BBF05BD249D5BE4009F9A65 /* LeanScale.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8BBF05E7249D66C3009F9A65 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				8BBF05E1249D667B009F9A65 /* ParameterEncoding.swift */,
+				8BBF05E3249D668F009F9A65 /* URLParameterEncoding.swift */,
+				8BBF05E5249D669C009F9A65 /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		8BBF05E8249D66E4009F9A65 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8BBF05DF249D660B009F9A65 /* HTTPMethod.swift */,
+				8BBF05DD249D652E009F9A65 /* NetworkLogger.swift */,
+				8BBF05E7249D66C3009F9A65 /* Encoding */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BBF05E4249D668F009F9A65 /* URLParameterEncoding.swift in Sources */,
+				8BBF05E2249D667B009F9A65 /* ParameterEncoding.swift in Sources */,
 				8BBF05B9249D5BE4009F9A65 /* ViewController.swift in Sources */,
+				8BBF05DE249D652E009F9A65 /* NetworkLogger.swift in Sources */,
+				8BBF05E0249D660B009F9A65 /* HTTPMethod.swift in Sources */,
+				8BBF05E6249D669C009F9A65 /* JSONParameterEncoder.swift in Sources */,
 				8BBF05B5249D5BE4009F9A65 /* AppDelegate.swift in Sources */,
 				8BBF05BF249D5BE4009F9A65 /* LeanScale.xcdatamodeld in Sources */,
 				8BBF05B7249D5BE4009F9A65 /* SceneDelegate.swift in Sources */,
@@ -400,7 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T4P68QCSUQ;
-				INFOPLIST_FILE = LeanScale/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LeanScale/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -418,7 +454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T4P68QCSUQ;
-				INFOPLIST_FILE = LeanScale/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LeanScale/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
