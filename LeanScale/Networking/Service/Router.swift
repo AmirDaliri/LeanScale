@@ -39,7 +39,10 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     
     fileprivate func buildRequest(from route: EndPoint) throws -> URLRequest {
         
-        var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path),
+        let base = route.baseURL
+        let baseAppend = base.appendingPathComponent(route.path).absoluteString.removingPercentEncoding
+        let url = URL(string: baseAppend!)
+        var request = URLRequest(url: url!,
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                  timeoutInterval: 10.0)
         
