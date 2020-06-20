@@ -12,17 +12,22 @@ class GamesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var networkManager = NetworkManager()
+    private var networkManager = NetworkManager()
     var games: [GamesResult] = []
     var page = 1
     var isLoadingTableView = true
-
+    let showDetailIdentifire = "showDetail"
+    
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // I'm Here...
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
         let search = UISearchController(searchResultsController: nil)
@@ -35,7 +40,16 @@ class GamesViewController: UIViewController {
         getGames()
     }
 
-
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == showDetailIdentifire {
+            let viewController: GameTableViewController = segue.destination as! GameTableViewController
+            let indexPath = self.tableView.indexPathForSelectedRow
+            viewController.id = self.games[(indexPath?.row)!].id
+        }
+    }
+    
     // MARK: - API Method
     
     func getGames() {
@@ -80,7 +94,7 @@ extension GamesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.performSegue(withIdentifier: showDetailIdentifire, sender: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8BB21171249E4C970008E27D /* CashableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB21170249E4C970008E27D /* CashableImage.swift */; };
-		8BB21173249E4E7C0008E27D /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB21172249E4E7C0008E27D /* ActivityIndicator.swift */; };
+		8BB21173249E4E7C0008E27D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB21172249E4E7C0008E27D /* Extensions.swift */; };
+		8BB21177249E546B0008E27D /* GameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB21176249E546A0008E27D /* GameTableViewController.swift */; };
 		8BBF05B5249D5BE4009F9A65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05B4249D5BE4009F9A65 /* AppDelegate.swift */; };
 		8BBF05B7249D5BE4009F9A65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05B6249D5BE4009F9A65 /* SceneDelegate.swift */; };
 		8BBF05B9249D5BE4009F9A65 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05B8249D5BE4009F9A65 /* GamesViewController.swift */; };
@@ -62,7 +63,8 @@
 
 /* Begin PBXFileReference section */
 		8BB21170249E4C970008E27D /* CashableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashableImage.swift; sourceTree = "<group>"; };
-		8BB21172249E4E7C0008E27D /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		8BB21172249E4E7C0008E27D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8BB21176249E546A0008E27D /* GameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewController.swift; sourceTree = "<group>"; };
 		8BBF05B1249D5BE4009F9A65 /* LeanScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeanScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBF05B4249D5BE4009F9A65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BBF05B6249D5BE4009F9A65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,7 +131,7 @@
 		8BB21174249E4E950008E27D /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				8BB21172249E4E7C0008E27D /* ActivityIndicator.swift */,
+				8BB21172249E4E7C0008E27D /* Extensions.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				8BB21175249E4EA40008E27D /* Games */,
+				8BD4FAF8249E6B02007B3AE3 /* Game */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +324,14 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		8BD4FAF8249E6B02007B3AE3 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				8BB21176249E546A0008E27D /* GameTableViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -424,7 +435,7 @@
 			files = (
 				8BBF0622249E2A31009F9A65 /* GameTableViewCell.swift in Sources */,
 				8BBF05EC249D6750009F9A65 /* Router.swift in Sources */,
-				8BB21173249E4E7C0008E27D /* ActivityIndicator.swift in Sources */,
+				8BB21173249E4E7C0008E27D /* Extensions.swift in Sources */,
 				8BBF05E4249D668F009F9A65 /* URLParameterEncoding.swift in Sources */,
 				8BBF0605249D7001009F9A65 /* Clips.swift in Sources */,
 				8BBF05E2249D667B009F9A65 /* ParameterEncoding.swift in Sources */,
@@ -457,6 +468,7 @@
 				8BBF05B5249D5BE4009F9A65 /* AppDelegate.swift in Sources */,
 				8BBF05BF249D5BE4009F9A65 /* LeanScale.xcdatamodeld in Sources */,
 				8BBF05F7249D6D54009F9A65 /* JSONNull.swift in Sources */,
+				8BB21177249E546B0008E27D /* GameTableViewController.swift in Sources */,
 				8BBF05B7249D5BE4009F9A65 /* SceneDelegate.swift in Sources */,
 				8BBF0603249D6FED009F9A65 /* Clip.swift in Sources */,
 			);
