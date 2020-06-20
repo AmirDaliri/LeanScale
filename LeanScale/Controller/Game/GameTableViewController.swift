@@ -52,24 +52,14 @@ class GameTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 if let game = response {
                     self.detail = game
+                    self.gameDescLabel.set(html: game.gameDescription ?? "")
                     if let imgLink = game.backgroundImage {
-                        self.getImg(link: imgLink)
+                        self.networkManager.getImage(url: imgLink, imageView: self.coverImageView)
                     }
                     self.gameNameLabel.text = game.name
-                    self.gameDescLabel.set(html: game.gameDescription ?? "")
-                    
                 }
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    
-    func getImg(link: String) {
-        CashableImage.downloadImage(url: URL(string: link)!) { (img, err) in
-            DispatchQueue.main.async {
-                self.coverImageView.image = img
                 self.stopActivityIndicator()
+                self.tableView.reloadData()
             }
         }
     }

@@ -207,11 +207,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="109" id="aeV-mk-jpr">
-                                        <rect key="frame" x="0.0" y="319" width="414" height="109"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="61" id="aeV-mk-jpr">
+                                        <rect key="frame" x="0.0" y="319" width="414" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aeV-mk-jpr" id="IhT-Kb-LPv">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piI-LQ-Zas">
@@ -220,9 +220,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3za-r9-FOJ">
-                                                    <rect key="frame" x="16" y="44.5" width="382" height="48"/>
-                                                    <string key="text">Rockstar Games went bigger, since their previous installment of the series. You get the complicated and realistic world-building from Liberty City of GTA4 in the setting of lively and diverse Los Santos, from an old fan favorite GTA San Andreas. 561 different vehicles (including every transport you can operate)....</string>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3za-r9-FOJ">
+                                                    <rect key="frame" x="16" y="44.5" width="382" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -232,15 +231,15 @@
                                                 <constraint firstItem="piI-LQ-Zas" firstAttribute="top" secondItem="IhT-Kb-LPv" secondAttribute="top" constant="16" id="DEs-xw-cfI"/>
                                                 <constraint firstAttribute="trailing" secondItem="3za-r9-FOJ" secondAttribute="trailing" constant="16" id="HQl-i1-ync"/>
                                                 <constraint firstItem="piI-LQ-Zas" firstAttribute="leading" secondItem="IhT-Kb-LPv" secondAttribute="leading" constant="16" id="O9g-i1-FOX"/>
-                                                <constraint firstAttribute="bottom" secondItem="3za-r9-FOJ" secondAttribute="bottom" constant="16.5" id="SqO-le-EmF"/>
                                                 <constraint firstItem="3za-r9-FOJ" firstAttribute="leading" secondItem="IhT-Kb-LPv" secondAttribute="leading" constant="16" id="a9E-yT-7DH"/>
                                                 <constraint firstAttribute="trailing" secondItem="piI-LQ-Zas" secondAttribute="trailing" constant="16" id="cdI-8s-oPt"/>
+                                                <constraint firstAttribute="bottom" secondItem="3za-r9-FOJ" secondAttribute="bottom" constant="16.5" id="jwe-ue-V2t"/>
                                                 <constraint firstItem="3za-r9-FOJ" firstAttribute="top" secondItem="piI-LQ-Zas" secondAttribute="bottom" constant="8" id="mfC-io-ERY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="54" id="qtC-pa-Wzf">
-                                        <rect key="frame" x="0.0" y="428" width="414" height="54"/>
+                                        <rect key="frame" x="0.0" y="380" width="414" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qtC-pa-Wzf" id="fff-zV-PkW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
@@ -263,7 +262,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="54" id="8gn-YP-TQy">
-                                        <rect key="frame" x="0.0" y="482" width="414" height="54"/>
+                                        <rect key="frame" x="0.0" y="434" width="414" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8gn-YP-TQy" id="JRq-Qa-3m8">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>

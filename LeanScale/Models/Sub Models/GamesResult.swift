@@ -27,8 +27,8 @@ public struct GamesResult: Codable {
     public var suggestionsCount: Int?
     public var userGame: JSONNull?
     public var reviewsCount: Int?
-    public var saturatedColor: Color?
-    public var dominantColor: Color?
+    public var saturatedColor: ColorRes?
+    public var dominantColor: ColorRes?
     public var platforms: [PlatformElement]?
     public var parentPlatforms: [ParentPlatform]?
     public var genres: [Genre]?
@@ -67,7 +67,7 @@ public struct GamesResult: Codable {
         case shortScreenshots = "short_screenshots"
     }
 
-    public init(id: Int?, slug: String?, name: String?, released: String?, tba: Bool?, backgroundImage: String?, rating: Double?, ratingTop: Int?, ratings: [Rating]?, ratingsCount: Int?, reviewsTextCount: Int?, added: Int?, addedByStatus: AddedByStatus?, metacritic: Int?, playtime: Int?, suggestionsCount: Int?, userGame: JSONNull?, reviewsCount: Int?, saturatedColor: Color?, dominantColor: Color?, platforms: [PlatformElement]?, parentPlatforms: [ParentPlatform]?, genres: [Genre]?, stores: [Store]?, clip: Clip?, tags: [Genre]?, shortScreenshots: [ShortScreenshot]?) {
+    public init(id: Int?, slug: String?, name: String?, released: String?, tba: Bool?, backgroundImage: String?, rating: Double?, ratingTop: Int?, ratings: [Rating]?, ratingsCount: Int?, reviewsTextCount: Int?, added: Int?, addedByStatus: AddedByStatus?, metacritic: Int?, playtime: Int?, suggestionsCount: Int?, userGame: JSONNull?, reviewsCount: Int?, saturatedColor: ColorRes?, dominantColor: ColorRes?, platforms: [PlatformElement]?, parentPlatforms: [ParentPlatform]?, genres: [Genre]?, stores: [Store]?, clip: Clip?, tags: [Genre]?, shortScreenshots: [ShortScreenshot]?) {
         self.id = id
         self.slug = slug
         self.name = name

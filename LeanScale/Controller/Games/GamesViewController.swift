@@ -24,20 +24,17 @@ class GamesViewController: UIViewController {
         super.viewDidLoad()
         
         // I'm Here...
+        getGames()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
         self.navigationItem.searchController = search
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        getGames()
     }
 
     // MARK: - Navigation

@@ -59,8 +59,8 @@ public struct Result: Codable {
     public var tags: [Tag]?
     public var userGame: JSONNull?
     public var reviewsCount: Int?
-    public var saturatedColor: Color?
-    public var dominantColor: Color?
+    public var saturatedColor: ColorRes?
+    public var dominantColor: ColorRes?
     public var shortScreenshots: [ShortScreenshot]?
     public var parentPlatforms: [Platform]?
     public var genres: [Genre]?
@@ -98,7 +98,7 @@ public struct Result: Codable {
         case communityRating = "community_rating"
     }
 
-    public init(slug: String?, name: String?, playtime: Int?, platforms: [Platform]?, stores: [Store]?, released: String?, tba: Bool?, backgroundImage: String?, rating: Double?, ratingTop: Int?, ratings: [Rating]?, ratingsCount: Int?, reviewsTextCount: Int?, added: Int?, addedByStatus: AddedByStatus?, metacritic: Int?, suggestionsCount: Int?, id: Int?, score: String?, clip: Clip?, tags: [Tag]?, userGame: JSONNull?, reviewsCount: Int?, saturatedColor: Color?, dominantColor: Color?, shortScreenshots: [ShortScreenshot]?, parentPlatforms: [Platform]?, genres: [Genre]?, communityRating: Int?) {
+    public init(slug: String?, name: String?, playtime: Int?, platforms: [Platform]?, stores: [Store]?, released: String?, tba: Bool?, backgroundImage: String?, rating: Double?, ratingTop: Int?, ratings: [Rating]?, ratingsCount: Int?, reviewsTextCount: Int?, added: Int?, addedByStatus: AddedByStatus?, metacritic: Int?, suggestionsCount: Int?, id: Int?, score: String?, clip: Clip?, tags: [Tag]?, userGame: JSONNull?, reviewsCount: Int?, saturatedColor: ColorRes?, dominantColor: ColorRes?, shortScreenshots: [ShortScreenshot]?, parentPlatforms: [Platform]?, genres: [Genre]?, communityRating: Int?) {
         self.slug = slug
         self.name = name
         self.playtime = playtime

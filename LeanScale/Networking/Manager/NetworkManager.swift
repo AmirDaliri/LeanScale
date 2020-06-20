@@ -93,6 +93,12 @@ struct NetworkManager {
         }
     }
     
+    func getImage(url: String, imageView: UIImageView) {
+        let url = URL(string: url)
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(with: url, placeholder: nil, options: [ .scaleFactor(UIScreen.main.scale), .transition(.fade(1)), .cacheOriginalImage],progressBlock: nil) { (_, _, _, _) in }
+    }
+
     func setImage(from url: String, imageView: UIImageView) {
         guard let imageURL = URL(string: url) else { return }
         

@@ -24,11 +24,7 @@ class GameTableViewCell: UITableViewCell {
         }
         
         if let imgLink = data.backgroundImage  {
-            CashableImage.downloadImage(url: URL(string: imgLink)!) { (img, err) in
-                DispatchQueue.main.async {
-                    self.gameImageView.image = img
-                }
-            }
+            networkManager.getImage(url: imgLink, imageView: gameImageView)
         }
         
         if let metacritic = data.metacritic {
@@ -43,7 +39,6 @@ class GameTableViewCell: UITableViewCell {
             self.gameTypeLabel.text = genresArr.joined(separator: ", ")
         }
     }
-
 }
 
 extension GameTableViewCell {

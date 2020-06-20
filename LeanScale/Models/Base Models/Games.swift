@@ -13,7 +13,7 @@
 
 import Foundation
 
-public enum Color: String, Codable {
+public enum ColorRes: String, Codable {
     case the0F0F0F = "0f0f0f"
 }
 
