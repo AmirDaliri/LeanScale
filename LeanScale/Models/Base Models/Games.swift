@@ -33,7 +33,7 @@ public enum Title: String, Codable {
 public struct Games: Codable {
     public var count: Int?
     public var next: String?
-    public var previous: JSONNull?
+    public var previous: String?
     public var results: [GamesResult]?
     public var seoTitle: String?
     public var seoDescription: String?
@@ -61,7 +61,7 @@ public struct Games: Codable {
         case nofollowCollections = "nofollow_collections"
     }
 
-    public init(count: Int?, next: String?, previous: JSONNull?, results: [GamesResult]?, seoTitle: String?, seoDescription: String?, seoKeywords: String?, seoH1: String?, noindex: Bool?, nofollow: Bool?, gamesDescription: String?, filters: Filters?, nofollowCollections: [String]?) {
+    public init(count: Int?, next: String?, previous: String?, results: [GamesResult]?, seoTitle: String?, seoDescription: String?, seoKeywords: String?, seoH1: String?, noindex: Bool?, nofollow: Bool?, gamesDescription: String?, filters: Filters?, nofollowCollections: [String]?) {
         self.count = count
         self.next = next
         self.previous = previous

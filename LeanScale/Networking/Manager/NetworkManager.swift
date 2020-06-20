@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum NetworkResponse:String {
     case success
@@ -47,9 +48,9 @@ struct NetworkManager {
                         return
                     }
                     do {
-                        print(responseData)
-                        let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
-                        print(jsonData)
+//                        print(responseData)
+//                        let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+//                        print(jsonData)
                         let apiResponse = try JSONDecoder().decode(Games.self, from: responseData)
                         completion(apiResponse,nil)
                     }catch {
@@ -60,6 +61,21 @@ struct NetworkManager {
                     completion(nil, networkFailureError)
                 }
             }
+        }
+    }
+    
+    func setImage(from url: String, imageView: UIImageView) {
+        guard let imageURL = URL(string: url) else { return }
+        
+        // just not to cause a deadlock in UI!
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+            let image = UIImage(data: imageData)
+            UIView.transition(with: imageView, duration:0.3, options: .transitionCrossDissolve, animations: {
+                DispatchQueue.main.async {
+                    imageView.image = image
+                }
+            }, completion: nil)
         }
     }
     

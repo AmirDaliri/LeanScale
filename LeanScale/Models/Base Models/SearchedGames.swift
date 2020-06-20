@@ -12,7 +12,7 @@ import Foundation
 public struct SearchedGames: Codable {
     public var count: Int?
     public var next: String?
-    public var previous: JSONNull?
+    public var previous: String?
     public var results: [GamesResult]?
     public var userPlatforms: Bool?
 
@@ -24,7 +24,7 @@ public struct SearchedGames: Codable {
         case userPlatforms = "user_platforms"
     }
 
-    public init(count: Int?, next: String?, previous: JSONNull?, results: [GamesResult]?, userPlatforms: Bool?) {
+    public init(count: Int?, next: String?, previous: String?, results: [GamesResult]?, userPlatforms: Bool?) {
         self.count = count
         self.next = next
         self.previous = previous
