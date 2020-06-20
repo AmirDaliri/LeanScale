@@ -43,6 +43,8 @@
 		8BBF0613249D7078009F9A65 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0612249D7078009F9A65 /* Rating.swift */; };
 		8BBF0615249D7093009F9A65 /* ShortScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0614249D7093009F9A65 /* ShortScreenshot.swift */; };
 		8BBF0617249D70A1009F9A65 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF0616249D70A1009F9A65 /* Store.swift */; };
+		8BBF061C249D7266009F9A65 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF061B249D7266009F9A65 /* EndPoints.swift */; };
+		8BBF061E249D728B009F9A65 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF061D249D728B009F9A65 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		8BBF0612249D7078009F9A65 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		8BBF0614249D7093009F9A65 /* ShortScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortScreenshot.swift; sourceTree = "<group>"; };
 		8BBF0616249D70A1009F9A65 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		8BBF061B249D7266009F9A65 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		8BBF061D249D728B009F9A65 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,8 @@
 		8BBF05E8249D66E4009F9A65 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				8BBF061F249E1B17009F9A65 /* EndPoint */,
+				8BBF0620249E1B29009F9A65 /* Manager */,
 				8BBF05EF249D6787009F9A65 /* Service */,
 				8BBF05E7249D66C3009F9A65 /* Encoding */,
 			);
@@ -264,6 +270,22 @@
 				8BBF05F6249D6D54009F9A65 /* JSONNull.swift */,
 			);
 			path = Nullable;
+			sourceTree = "<group>";
+		};
+		8BBF061F249E1B17009F9A65 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				8BBF061B249D7266009F9A65 /* EndPoints.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		8BBF0620249E1B29009F9A65 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8BBF061D249D728B009F9A65 /* NetworkManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +399,8 @@
 				8BBF0611249D7069009F9A65 /* Requirements.swift in Sources */,
 				8BBF060F249D7059009F9A65 /* PlatformPlatform.swift in Sources */,
 				8BBF05DE249D652E009F9A65 /* NetworkLogger.swift in Sources */,
+				8BBF061E249D728B009F9A65 /* NetworkManager.swift in Sources */,
+				8BBF061C249D7266009F9A65 /* EndPoints.swift in Sources */,
 				8BBF05E0249D660B009F9A65 /* HTTPMethod.swift in Sources */,
 				8BBF05FB249D6F98009F9A65 /* AddedByStatus.swift in Sources */,
 				8BBF0613249D7078009F9A65 /* Rating.swift in Sources */,
