@@ -10,12 +10,12 @@ import UIKit
 import CoreData
 
 class FavoriteViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var controller : NSFetchedResultsController<SGame>!
     let showDetailIdentifire = "showDetail"
-
+    
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class FavoriteViewController: UIViewController {
         // I'm Here...
         attemptFetch()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -46,7 +46,7 @@ class FavoriteViewController: UIViewController {
     func configureCell(cell : GameTableViewCell , indexPath: NSIndexPath) {
         let item  = controller.object(at:indexPath as IndexPath)
         cell.configFave(data: item)
-     }
+    }
     
     //MARK: - coreData
     
@@ -60,9 +60,9 @@ class FavoriteViewController: UIViewController {
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         controller.delegate = self
         self.controller = controller
-
+        
         do{
-           try controller.performFetch()
+            try controller.performFetch()
         }
         catch{
             let error = error as NSError
@@ -132,53 +132,53 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 
+// MARK: - NSFetchedResultsControllerDelegate Method
 
 extension FavoriteViewController: NSFetchedResultsControllerDelegate {
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-            tableView.beginUpdates()
-        }
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
-        func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-            tableView.endUpdates()
-        }
-        
-        func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-            
-            switch (type) {
-            case .insert:
-                if let indexPath = newIndexPath {
-                    tableView.insertRows(at: [indexPath], with: .fade)
-                    tableView.backgroundView = nil
-                    attemptFetch()
-                }
-                break
-                
-            case .delete:
-                if let indexPath = indexPath {
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }
-                break
-                
-            case.update:
-                if let indexPath = indexPath {
-                    let cell = tableView.cellForRow(at: indexPath) as! GameTableViewCell
-                    configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
-                }
-                break
-                
-            case .move:
-                if let indexPath = indexPath {
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }
-                if let indexPath = newIndexPath {
-                    tableView.insertRows(at: [indexPath], with: .fade)
-                }
-                break
-                
-            @unknown default:
-                fatalError()
+        switch (type) {
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+                tableView.backgroundView = nil
+                attemptFetch()
             }
+            break
             
-        }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            break
+            
+        case.update:
+            if let indexPath = indexPath {
+                let cell = tableView.cellForRow(at: indexPath) as! GameTableViewCell
+                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+            }
+            break
+            
+        case .move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+            
+        @unknown default:
+            fatalError()
+        }        
+    }
 }

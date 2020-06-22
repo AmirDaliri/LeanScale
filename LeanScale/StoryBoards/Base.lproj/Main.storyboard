@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -305,13 +306,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piI-LQ-Zas">
                                                     <rect key="frame" x="16" y="16" width="382" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="labelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3za-r9-FOJ">
                                                     <rect key="frame" x="16" y="44.5" width="382" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="labelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -416,51 +417,17 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="lwe-ow-Htz">
-            <objects>
-                <viewController id="FZP-O1-m2k" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aXN-ky-Azn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="ajD-Gx-lGr"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="t0L-MS-jmA">
-                        <barButtonItem key="rightBarButtonItem" image="icons8-ok" id="pb5-K0-lQ4"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ge-b2-Ix8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2942.0289855072465" y="-1209.375"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="JnO-zC-YrV">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yIP-ZB-4xs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="emi-Wf-xbE">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="FZP-O1-m2k" kind="relationship" relationship="rootViewController" id="ThD-BJ-paQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MHR-Bz-dVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2031.8840579710147" y="-1209.375"/>
-        </scene>
     </scenes>
     <resources>
         <image name="ic_game_select" width="42" height="28"/>
         <image name="ic_game_unselect" width="42" height="28"/>
         <image name="ic_star_select" width="28" height="26"/>
         <image name="ic_star_unselect" width="28" height="26"/>
-        <image name="icons8-ok" width="25" height="25"/>
+        <namedColor name="labelColor">
+            <color red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IJK-UK-HbA"/>
+        <segue reference="0KN-Nc-ZuL"/>
     </inferredMetricsTieBreakers>
 </document>

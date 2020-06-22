@@ -9,7 +9,7 @@
 import UIKit
 
 class GameTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var metacriticLabel: UILabel!
@@ -50,7 +50,6 @@ class GameTableViewCell: UITableViewCell {
                 self.gameImageView.image = UIImage(data: img)
             }
         }
-//        gameImageView.image = data.toImage?.img as? UIImage
     }
 }
 

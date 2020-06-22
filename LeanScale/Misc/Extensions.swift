@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Loading
 extension UIViewController {
     func runActivityIndicator(){
         self.view.isUserInteractionEnabled = false
@@ -36,16 +37,36 @@ extension UIViewController {
 }
 
 
+// MARK: - HTML Label
 extension UILabel {
-  func set(html: String) {
-    if let htmlData = html.data(using: .unicode) {
-      do {
-        self.attributedText = try NSAttributedString(data: htmlData,
-                                                     options: [.documentType: NSAttributedString.DocumentType.html],
-                                                     documentAttributes: nil)
-      } catch let e as NSError {
-        print("Couldn't parse \(html): \(e.localizedDescription)")
-      }
+    func set(html: String) {
+        if let htmlData = html.data(using: .unicode) {
+            do {
+                self.attributedText = try NSAttributedString(data: htmlData,
+                                                             options: [.documentType: NSAttributedString.DocumentType.html],
+                                                             documentAttributes: nil)
+                self.textColor = Style.Colors.label
+            } catch let e as NSError {
+                print("Couldn't parse \(html): \(e.localizedDescription)")
+            }
+        }
     }
-  }
 }
+
+// MARK: - Color Method
+
+public enum DefaultStyle {
+
+    public enum Colors {
+
+        public static let label: UIColor = {
+            if #available(iOS 13.0, *) {
+                return UIColor.label
+            } else {
+                return .black
+            }
+        }()
+    }
+}
+public let Style = DefaultStyle.self
+

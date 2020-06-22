@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class GameTableViewController: UITableViewController {
-
+    
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var gameDescLabel: UILabel!
@@ -18,7 +18,7 @@ class GameTableViewController: UITableViewController {
     private var networkManager = NetworkManager()
     
     var controller : NSFetchedResultsController<SGame>!
-
+    
     var faveGame: SGame?
     var detail: Game?
     var id: Int?
@@ -32,12 +32,12 @@ class GameTableViewController: UITableViewController {
         attemptFetch()
         
         if faveGame != nil {
-             self.navigationItem.rightBarButtonItem?.isEnabled = false
-             self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
-             self.loadFaveGame()
-         } else {
-             getGameDetail()
-         }
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+            self.loadFaveGame()
+        } else {
+            getGameDetail()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,10 +49,11 @@ class GameTableViewController: UITableViewController {
     }
     
     // MARK: - Setup UI From Fave Game
+    
     func loadFaveGame() {
         if let data = faveGame {
             gameNameLabel.text = data.name
-            gameDescLabel.text = data.descValue
+            gameDescLabel.set(html: data.descValue ?? "")
             DispatchQueue.main.async {
                 if let img = data.img {
                     self.coverImageView.image = UIImage(data: img)
@@ -95,9 +96,7 @@ class GameTableViewController: UITableViewController {
         appDelegate.saveContext()
         
         navigationItem.rightBarButtonItem?.isEnabled = false
-        navigationItem.rightBarButtonItem?.image = #imageLiteral(resourceName: "icons8-ok")
-        
-//        navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+        navigationItem.rightBarButtonItem?.image = #imageLiteral(resourceName: "icons8-ok")        
     }
     
     // MARK: - API Method
@@ -134,15 +133,15 @@ class GameTableViewController: UITableViewController {
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         self.controller = controller
-
+        
         do{
-           try controller.performFetch()
+            try controller.performFetch()
         }
         catch{
             let error = error as NSError
             print(error.debugDescription)
         }
-
+        
         if let items = controller.fetchedObjects {
             for i in items {
                 if id == Int(i.id) {
