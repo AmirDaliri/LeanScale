@@ -39,6 +39,19 @@ class GameTableViewCell: UITableViewCell {
             self.gameTypeLabel.text = genresArr.joined(separator: ", ")
         }
     }
+    
+    // MARK: - Fetch From DB
+    func configFave(data: SGame) {
+        nameLabel.text = data.name
+        gameTypeLabel.text = data.genres
+        metacriticLabel.text = "\(data.metacritic)"
+        DispatchQueue.main.async {
+            if let img = data.img {
+                self.gameImageView.image = UIImage(data: img)
+            }
+        }
+//        gameImageView.image = data.toImage?.img as? UIImage
+    }
 }
 
 extension GameTableViewCell {

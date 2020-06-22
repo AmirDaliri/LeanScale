@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GameTableViewController: UITableViewController {
 
@@ -16,6 +17,9 @@ class GameTableViewController: UITableViewController {
     
     private var networkManager = NetworkManager()
     
+    var controller : NSFetchedResultsController<SGame>!
+
+    var fromFaveList = false
     var detail: Game?
     var id: Int?
     
@@ -25,6 +29,12 @@ class GameTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // I'm Here...
+        
+        attemptFetch()
+        if fromFaveList {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +48,44 @@ class GameTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getGameDetail()
+    }
+    
+    // MARK: - Action Method
+    
+    @IBAction func faveBarButtonTapped(_ sender: Any) {
+        addToFavorite()
+    }
+    
+    // MARK: - coreData Method
+    
+    func addToFavorite() {
+        var genresArr = [String]()
+        
+        let game = SGame(context: context)
+        let imageData = self.coverImageView.image?.pngData()
+        let id = Int32((detail?.id)!)
+        
+        if let genres = detail?.genres {
+            for genre in genres {
+                genresArr.append(genre.name ?? "")
+            }
+        }
+        
+        game.name = detail?.name
+        game.descValue = detail?.gameDescription
+        game.reddit = detail?.redditurl
+        game.url = detail?.website
+        game.metacritic = Int32(detail?.metacritic ?? 0)
+        game.img = imageData
+        game.id = id
+        game.genres = genresArr.joined(separator: ", ")
+        
+        appDelegate.saveContext()
+        
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        navigationItem.rightBarButtonItem?.image = #imageLiteral(resourceName: "icons8-ok")
+        
+//        navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
     }
     
     // MARK: - API Method
@@ -60,6 +108,35 @@ class GameTableViewController: UITableViewController {
                 }
                 self.stopActivityIndicator()
                 self.tableView.reloadData()
+            }
+        }
+    }
+    //MARK: - coreData
+    
+    func attemptFetch() {
+        
+        let fetchRequest :NSFetchRequest<SGame> = SGame.fetchRequest()
+        
+        let datasort = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [datasort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        self.controller = controller
+
+        do{
+           try controller.performFetch()
+        }
+        catch{
+            let error = error as NSError
+            print(error.debugDescription)
+        }
+
+        if let items = controller.fetchedObjects {
+            for i in items {
+                if id == Int(i.id) {
+                    self.navigationItem.rightBarButtonItem?.isEnabled = false
+                    self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+                }
             }
         }
     }
