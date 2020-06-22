@@ -19,7 +19,7 @@ class GameTableViewController: UITableViewController {
     
     var controller : NSFetchedResultsController<SGame>!
 
-    var fromFaveList = false
+    var faveGame: SGame?
     var detail: Game?
     var id: Int?
     
@@ -29,12 +29,15 @@ class GameTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // I'm Here...
-        
         attemptFetch()
-        if fromFaveList {
-            self.navigationItem.rightBarButtonItem?.isEnabled = false
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
-        }
+        
+        if faveGame != nil {
+             self.navigationItem.rightBarButtonItem?.isEnabled = false
+             self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+             self.loadFaveGame()
+         } else {
+             getGameDetail()
+         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,9 +48,18 @@ class GameTableViewController: UITableViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        getGameDetail()
+    // MARK: - Setup UI From Fave Game
+    func loadFaveGame() {
+        if let data = faveGame {
+            gameNameLabel.text = data.name
+            gameDescLabel.text = data.descValue
+            DispatchQueue.main.async {
+                if let img = data.img {
+                    self.coverImageView.image = UIImage(data: img)
+                }
+            }
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Action Method
@@ -154,11 +166,15 @@ class GameTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 2:
-            if let urlStr = detail?.redditurl, let url = URL(string: urlStr) {
+            if let data = faveGame, let urlStr = data.url, let url = URL(string: urlStr) {
+                UIApplication.shared.open(url)
+            } else if let urlStr = detail?.redditurl, let url = URL(string: urlStr) {
                 UIApplication.shared.open(url)
             }
         case 3:
-            if let urlStr = detail?.website, let url = URL(string: urlStr) {
+            if let data = faveGame, let urlStr = data.reddit, let url = URL(string: urlStr) {
+                UIApplication.shared.open(url)
+            } else if let urlStr = detail?.website, let url = URL(string: urlStr) {
                 UIApplication.shared.open(url)
             }
         default:

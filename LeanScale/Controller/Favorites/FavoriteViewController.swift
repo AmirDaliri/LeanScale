@@ -37,9 +37,8 @@ class FavoriteViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == showDetailIdentifire {
             let vc: GameTableViewController = segue.destination as! GameTableViewController
-            if let item = sender as? SGame {
-                vc.id = Int(item.id)
-                vc.fromFaveList = true
+            if let item = sender as? SGame {                                
+                vc.faveGame = item
             }
         }
     }
