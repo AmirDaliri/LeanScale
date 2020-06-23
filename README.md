@@ -1,9 +1,9 @@
 # LeanScale
 
-### Core Data
-### Rest API, Codable
-### URLSession Network Layer
-### Offline Mode for Favorites VIew
+#### Core Data
+#### Rest API, Codable
+#### URLSession Network Layer
+#### Offline Mode for Favorites VIew
 
 
 <p align="center">
