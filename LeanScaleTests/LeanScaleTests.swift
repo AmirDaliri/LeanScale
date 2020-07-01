@@ -58,4 +58,12 @@ class LeanScaleTests: XCTestCase {
             
         }
     }
+
+    func testFethGames() {
+        let networkManager = NetworkManager()
+        networkManager.getGameList(pageSize: 15, page: 1) { (response, error) in
+            XCTAssertNotNil(response?.results)
+        }
+    }
 }
+
