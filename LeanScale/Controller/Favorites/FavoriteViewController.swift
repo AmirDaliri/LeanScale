@@ -11,7 +11,7 @@ import CoreData
 
 class FavoriteViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     var controller : NSFetchedResultsController<SGame>!
     let showDetailIdentifire = "showDetail"

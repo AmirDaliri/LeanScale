@@ -10,10 +10,10 @@ import UIKit
 
 class GameTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var gameImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var metacriticLabel: UILabel!
-    @IBOutlet weak var gameTypeLabel: UILabel!
+    @IBOutlet private weak var gameImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var metacriticLabel: UILabel!
+    @IBOutlet private weak var gameTypeLabel: UILabel!
     
     var networkManager = NetworkManager()
     

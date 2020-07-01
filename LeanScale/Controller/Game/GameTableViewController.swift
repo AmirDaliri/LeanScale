@@ -11,9 +11,9 @@ import CoreData
 
 class GameTableViewController: UITableViewController {
     
-    @IBOutlet weak var coverImageView: UIImageView!
-    @IBOutlet weak var gameNameLabel: UILabel!
-    @IBOutlet weak var gameDescLabel: UILabel!
+    @IBOutlet private weak var coverImageView: UIImageView!
+    @IBOutlet private weak var gameNameLabel: UILabel!
+    @IBOutlet private weak var gameDescLabel: UILabel!
     
     private var networkManager = NetworkManager()
     
@@ -112,15 +112,20 @@ class GameTableViewController: UITableViewController {
         networkManager.getGame(id: gameID) { (response, error) in
             DispatchQueue.main.async {
                 if let game = response {
-                    self.detail = game
-                    self.gameDescLabel.set(html: game.gameDescription ?? Strings.noDescription)
-                    if let imgLink = game.backgroundImage {
-                        self.networkManager.getImage(url: imgLink, imageView: self.coverImageView, shouldResize: false)
+                    UIView.animate(withDuration: 0.4) {
+                        self.detail = game
+                        self.gameDescLabel.set(html: game.gameDescription ?? Strings.noDescription)
+                        if let imgLink = game.backgroundImage {
+                            self.networkManager.getImage(url: imgLink, imageView: self.coverImageView, shouldResize: false)
+                        }
+                        self.gameNameLabel.text = game.name ?? Strings.noName
+                        
+                        self.view.layoutIfNeeded()
+                        self.tableView.beginUpdates()
+                        self.tableView.endUpdates()
                     }
-                    self.gameNameLabel.text = game.name ?? Strings.noName
                 }
                 self.stopActivityIndicator()
-                self.tableView.reloadData()
             }
         }
     }
