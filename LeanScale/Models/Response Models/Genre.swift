@@ -1,5 +1,5 @@
 //
-//  PlatformPlatform.swift
+//  Genre.swift
 //  LeanScale
 //
 //  Created by Amir Daliri on 6/20/20.
@@ -8,35 +8,37 @@
 
 import Foundation
 
-public struct PlatformPlatform: Codable {
+public enum Language: String, Codable {
+    case eng = "eng"
+    case rus = "rus"
+}
+
+public struct Genre: Codable {
     public var id: Int?
     public var name: String?
     public var slug: String?
-    public var image: JSONNull?
-    public var yearEnd: JSONNull?
-    public var yearStart: Int?
     public var gamesCount: Int?
     public var imageBackground: String?
+    public var domain: String?
+    public var language: Language?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
         case slug = "slug"
-        case image = "image"
-        case yearEnd = "year_end"
-        case yearStart = "year_start"
         case gamesCount = "games_count"
         case imageBackground = "image_background"
+        case domain = "domain"
+        case language = "language"
     }
 
-    public init(id: Int?, name: String?, slug: String?, image: JSONNull?, yearEnd: JSONNull?, yearStart: Int?, gamesCount: Int?, imageBackground: String?) {
+    public init(id: Int?, name: String?, slug: String?, gamesCount: Int?, imageBackground: String?, domain: String?, language: Language?) {
         self.id = id
         self.name = name
         self.slug = slug
-        self.image = image
-        self.yearEnd = yearEnd
-        self.yearStart = yearStart
         self.gamesCount = gamesCount
         self.imageBackground = imageBackground
+        self.domain = domain
+        self.language = language
     }
 }
