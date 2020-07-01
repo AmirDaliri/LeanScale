@@ -9,15 +9,22 @@
 import UIKit
 import CoreData
 
+protocol GameTableDelegate: class {
+    func gameSaw(indexPath: IndexPath)
+}
+
 class GameTableViewController: UITableViewController {
     
     @IBOutlet private weak var coverImageView: UIImageView!
     @IBOutlet private weak var gameNameLabel: UILabel!
     @IBOutlet private weak var gameDescLabel: UILabel!
     
+    weak var delegate: GameTableDelegate?
     private var networkManager = NetworkManager()
     
     var controller : NSFetchedResultsController<SGame>!
+    var gamesSeenController : NSFetchedResultsController<GamesSeen>!
+    var gameIndexPatch: IndexPath!
     
     var faveGame: SGame?
     var detail: Game?
@@ -47,6 +54,12 @@ class GameTableViewController: UITableViewController {
             self.navigationItem.largeTitleDisplayMode = .never
             self.view.layoutIfNeeded()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        delegate?.gameSaw(indexPath: gameIndexPatch)
     }
     
     // MARK: - Setup UI From Fave Game
@@ -126,6 +139,8 @@ class GameTableViewController: UITableViewController {
                     }
                 }
                 self.stopActivityIndicator()
+                guard let id = response?.id else {return}
+                self.addSeenGamesId(id: Int32(id))
             }
         }
     }
@@ -159,7 +174,60 @@ class GameTableViewController: UITableViewController {
         }
     }
     
+    /**
+        Games Seen IDS
+
+        - SeeAlso: get all game ids that user saw detail view from data base
+
+        - Version: 1.0
+
+        - Author: amir daliri
+
+        - Note: checking id if is not existed append to database
+    **/
+        
+        func fetchGamesSeenIds() -> [Int] {
+            
+            let fetchRequest :NSFetchRequest<GamesSeen> = GamesSeen.fetchRequest()
+            
+            let datasort = NSSortDescriptor(key: "id", ascending: true)
+            fetchRequest.sortDescriptors = [datasort]
+            
+            let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            self.gamesSeenController = controller
+            
+            do{
+                try controller.performFetch()
+            }
+            catch{
+                let error = error as NSError
+                print(error.debugDescription)
+            }
+            
+            var ids: [Int] = []
+            if let items = controller.fetchedObjects {
+                for i in items {
+                    ids.append(Int(i.id))
+                }
+            }
+            
+            return ids
+        }
+        
+        func addSeenGamesId(id: Int32) {
+            let game = GamesSeen(context: context)
+            for i in fetchGamesSeenIds() {
+                if i == id {
+                    return
+                }
+            }
+            game.id = id
+            appDelegate.saveContext()
+        }
+    
+    
     // MARK: - UITableView Methode
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:

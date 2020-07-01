@@ -80,6 +80,7 @@
                                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="LNo-TI-I0B" secondAttribute="trailing" constant="169" id="t2g-AH-pTW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="cellSelectBackground"/>
                                         <connections>
                                             <outlet property="gameImageView" destination="yC9-jZ-FhQ" id="THR-1S-SCl"/>
                                             <outlet property="gameTypeLabel" destination="z1D-tt-IaY" id="5TU-el-xpG"/>
@@ -423,11 +424,14 @@
         <image name="ic_game_unselect" width="42" height="28"/>
         <image name="ic_star_select" width="28" height="26"/>
         <image name="ic_star_unselect" width="28" height="26"/>
+        <namedColor name="cellSelectBackground">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="0.20000000298023224" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="labelColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IJK-UK-HbA"/>
+        <segue reference="0KN-Nc-ZuL"/>
     </inferredMetricsTieBreakers>
 </document>

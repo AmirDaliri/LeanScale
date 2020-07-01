@@ -26,6 +26,7 @@ class GamesViewController: UIViewController {
     let showDetailIdentifire = "showDetail"
     
     var enteredQuery = ""
+    var searchItemsLoaded = false
     
     // MARK: - Lifecycle Methods
     
@@ -63,6 +64,10 @@ class GamesViewController: UIViewController {
         if segue.identifier == showDetailIdentifire {
             let viewController: GameTableViewController = segue.destination as! GameTableViewController
             let indexPath = self.tableView.indexPathForSelectedRow
+            
+            viewController.gameIndexPatch = indexPath
+            viewController.delegate = self
+            
             if isInSearch {
                 viewController.id = self.searchedGame[(indexPath?.row)!].id
             } else {
@@ -93,6 +98,7 @@ class GamesViewController: UIViewController {
     }
     
     func getSearchedGame() {
+        guard !searchItemsLoaded else { return }
         networkManager.searchGame(pageSize: pageSize, page: page, query: enteredQuery) { (response, error) in
             guard !(response?.results?.isEmpty ?? false) && self.isLoadingTableView else {
                 return
@@ -101,7 +107,10 @@ class GamesViewController: UIViewController {
                 for item in newItems {
                     self.searchedGame.append(item)
                 }
+            } else {
+                self.searchItemsLoaded = true
             }
+            
             DispatchQueue.main.async {
                 self.stopActivityIndicator()
                 self.page += 1
@@ -124,6 +133,7 @@ extension GamesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifire, for: indexPath) as! GameTableViewCell
+        
         if isInSearch {
             cell.config(data: searchedGame[indexPath.row])
         } else {
@@ -189,9 +199,30 @@ extension GamesViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchItemsLoaded = false
         isInSearch = false
         page = 1
         games = []
         getGames()
+    }
+}
+
+// MARK: - GameTableDelegate Method
+
+/**
+    Game Detail Call Back Protocol
+
+    - Parameter indexPath: tableview cell indexPath
+
+    - Todo: change cell background color when user saw detail of game and back to main list
+
+    - Version: 1.0
+
+    - Author: amir daliri
+**/
+
+extension GamesViewController: GameTableDelegate {
+    func gameSaw(indexPath: IndexPath) {
+        self.tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
