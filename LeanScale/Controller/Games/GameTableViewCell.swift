@@ -17,27 +17,33 @@ class GameTableViewCell: UITableViewCell {
     
     var networkManager = NetworkManager()
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        gameImageView.layer.cornerRadius = 8.0
+        gameImageView.layer.masksToBounds = true
+    }
+    
+    // MARK: - Config From API
     func config(data: GamesResult) {
         
-        if let name = data.name {
-            nameLabel.text = name
-        }
+        nameLabel.text = data.name ?? Strings.noName
+        metacriticLabel.text = String(data.metacritic ?? 0)
         
         if let imgLink = data.backgroundImage  {
-            networkManager.getImage(url: imgLink, imageView: gameImageView)
+            networkManager.getImage(url: imgLink, imageView: gameImageView, shouldResize: true)
         }
         
-        if let metacritic = data.metacritic {
-            metacriticLabel.text = String(metacritic)
+        guard let genres = data.genres else {
+            self.gameTypeLabel.text = Strings.noGenre
+            return
         }
         
-        if let genres = data.genres {
-            var genresArr = [String]()
-            for genre in genres {
-                genresArr.append(genre.name ?? "")
-            }
-            self.gameTypeLabel.text = genresArr.joined(separator: ", ")
+        var genresArr = [String]()
+        for genre in genres {
+            genresArr.append(genre.name ?? "")
         }
+        
+        self.gameTypeLabel.text = genresArr.joined(separator: ", ")
     }
     
     // MARK: - Fetch From DB

@@ -93,8 +93,8 @@ struct NetworkManager {
         }
     }
     
-    func searchGame(pageSize: Int, page: Int, q: String, completion: @escaping (_ games: SearchedGames?,_ error: String?)->()){
-        router.request(.searchGame(pageSize: pageSize, page: page, query: q)) { (data, response, error) in
+    func searchGame(pageSize: Int, page: Int, query: String, completion: @escaping (_ games: SearchedGames?,_ error: String?)->()){
+        router.request(.searchGame(pageSize: pageSize, page: page, query: query)) { (data, response, error) in
             if error != nil {
                 completion(nil, "Please check your network connection.")
             }
@@ -121,10 +121,19 @@ struct NetworkManager {
         }
     }
     
-    func getImage(url: String, imageView: UIImageView) {
+    func getImage(url: String, imageView: UIImageView, shouldResize: Bool) {
+        
         let url = URL(string: url)
+        let screenSize = UIScreen.main.bounds.width
+        let processor = ResizingImageProcessor(referenceSize: CGSize(width: (screenSize/3), height: (screenSize/3.5)))
+        
         imageView.kf.indicatorType = .activity
-        imageView.kf.setImage(with: url, placeholder: nil, options: [ .scaleFactor(UIScreen.main.scale), .transition(.fade(1)), .cacheOriginalImage],progressBlock: nil) { (_, _, _, _) in }
+        
+        if shouldResize {
+            imageView.kf.setImage(with: url, placeholder: nil, options: [ .scaleFactor(UIScreen.main.scale), .transition(.fade(1)), .cacheOriginalImage, .processor(processor)],progressBlock: nil) { (_, _, _, _) in }
+        } else {
+            imageView.kf.setImage(with: url, placeholder: nil, options: [ .scaleFactor(UIScreen.main.scale), .transition(.fade(1)), .cacheOriginalImage],progressBlock: nil) { (_, _, _, _) in }
+        }
     }
 
     func setImage(from url: String, imageView: UIImageView) {

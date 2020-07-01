@@ -29,6 +29,7 @@ class GameTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // I'm Here...
+        tableView.tableFooterView = UIView()
         attemptFetch()
         
         if faveGame != nil {
@@ -69,6 +70,7 @@ class GameTableViewController: UITableViewController {
         addToFavorite()
     }
     
+    
     // MARK: - coreData Method
     
     func addToFavorite() {
@@ -84,8 +86,8 @@ class GameTableViewController: UITableViewController {
             }
         }
         
-        game.name = detail?.name
-        game.descValue = detail?.gameDescription
+        game.name = detail?.name ?? Strings.noName
+        game.descValue = detail?.gameDescription ?? Strings.noDescription
         game.reddit = detail?.redditurl
         game.url = detail?.website
         game.metacritic = Int32(detail?.metacritic ?? 0)
@@ -111,11 +113,11 @@ class GameTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 if let game = response {
                     self.detail = game
-                    self.gameDescLabel.set(html: game.gameDescription ?? "")
+                    self.gameDescLabel.set(html: game.gameDescription ?? Strings.noDescription)
                     if let imgLink = game.backgroundImage {
-                        self.networkManager.getImage(url: imgLink, imageView: self.coverImageView)
+                        self.networkManager.getImage(url: imgLink, imageView: self.coverImageView, shouldResize: false)
                     }
-                    self.gameNameLabel.text = game.name
+                    self.gameNameLabel.text = game.name ?? Strings.noName
                 }
                 self.stopActivityIndicator()
                 self.tableView.reloadData()
@@ -152,6 +154,7 @@ class GameTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - UITableView Methode
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
@@ -165,16 +168,20 @@ class GameTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 2:
-            if let data = faveGame, let urlStr = data.url, let url = URL(string: urlStr) {
+            if let data = faveGame, let urlStr = data.reddit, let url = URL(string: urlStr) {
                 UIApplication.shared.open(url)
             } else if let urlStr = detail?.redditurl, let url = URL(string: urlStr) {
                 UIApplication.shared.open(url)
+            } else {
+                self.showAlert(title: "Ops!", message: Strings.noReddit, buttonTitle: "ok")
             }
         case 3:
-            if let data = faveGame, let urlStr = data.reddit, let url = URL(string: urlStr) {
+            if let data = faveGame, let urlStr = data.url, let url = URL(string: urlStr) {
                 UIApplication.shared.open(url)
             } else if let urlStr = detail?.website, let url = URL(string: urlStr) {
                 UIApplication.shared.open(url)
+            } else {
+                self.showAlert(title: "Ops!", message: Strings.noUrl, buttonTitle: "ok")
             }
         default:
             break

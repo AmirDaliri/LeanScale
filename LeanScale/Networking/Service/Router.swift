@@ -41,7 +41,9 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         
         let base = route.baseURL
         let baseAppend = base.appendingPathComponent(route.path).absoluteString.removingPercentEncoding
-        let url = URL(string: baseAppend!)
+        let urlString = baseAppend?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+
+        let url = URL(string: urlString!)
         var request = URLRequest(url: url!,
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                  timeoutInterval: 10.0)

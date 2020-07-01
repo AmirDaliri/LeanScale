@@ -10,7 +10,7 @@ import UIKit
 
 class GamesViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
     
     private var networkManager = NetworkManager()
     
@@ -25,7 +25,7 @@ class GamesViewController: UIViewController {
     var isLoadingTableView = true
     let showDetailIdentifire = "showDetail"
     
-    var q = ""
+    var enteredQuery = ""
     
     // MARK: - Lifecycle Methods
     
@@ -93,7 +93,7 @@ class GamesViewController: UIViewController {
     }
     
     func getSearchedGame() {
-        networkManager.searchGame(pageSize: pageSize, page: page, q: q) { (response, error) in
+        networkManager.searchGame(pageSize: pageSize, page: page, query: enteredQuery) { (response, error) in
             guard !(response?.results?.isEmpty ?? false) && self.isLoadingTableView else {
                 return
             }
@@ -156,7 +156,7 @@ extension GamesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 136.0
+        return UITableView.automaticDimension
     }
 }
 
@@ -165,11 +165,11 @@ extension GamesViewController: UITableViewDataSource, UITableViewDelegate {
 extension GamesViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let query = searchBar.text, query.count > 2 {
-            self.q = query
+            self.enteredQuery = query
             page = 1
             searchedGame = []
             isInSearch = true
-            networkManager.searchGame(pageSize: pageSize, page: page, q: query) { (response, error) in
+            networkManager.searchGame(pageSize: pageSize, page: page, query: query) { (response, error) in
                 guard !(response?.results?.isEmpty ?? false) && self.isLoadingTableView else {
                     return
                 }
