@@ -18,7 +18,7 @@ $ open -a Xcode LeanScale.xcodeproj
   <img src="https://raw.githubusercontent.com/AmirDaliri/LeanScale/master/imgs/Screen%20Shot%202020-07-02%20at%2002.52.31.png" width="300" title="hover text">
 </p>
 
-##Tech Detail & Architectural Detail
+## Tech Detail & Architectural Detail
 
 - MVC Design Pattern
 - URLSession Network Layer
@@ -30,7 +30,7 @@ $ open -a Xcode LeanScale.xcodeproj
 - Functional Parametric Comments.
 - Atomic commits to clear changes.
 
-####some more detail
+#### some more detail
 - I Choosed MVC and StoryBoard because it was smal project and i can developed faster than other design pattern like MVVM.
 - URLSession and Codable because in the test description wrote please don't use any libraries, and in fact, URLSession have better than any libraries like Alamofre because they are swift default methods and if developer writes good thread for Requests and implemented a network layer with this, it gonna be a good performance for iOS app. On the other hand i have good knowledge on implementing network layer and data models with any libraries.
 - Implement fave tab and todo feature took me the longest time
