@@ -10,7 +10,6 @@ $ cd LeanScale
 $ open -a Xcode LeanScale.xcodeproj 
 ```
 
-### Todos
 - if it's possible run the app on real device and see app in dark mode easily. it's awesome 😎
 - please for remove favorites use swipe to left, like the following screenshot.
 
