@@ -11,7 +11,7 @@ $ open -a Xcode LeanScale.xcodeproj
 ```
 
 ### Todos
-- if it's possible use run the app on real device and see app in dark mode easily.it's awesome 😎
+- if it's possible run the app on real device and see app in dark mode easily. it's awesome 😎
 - please for remove favorites use swipe to left, like the following screenshot.
 
 <p align="center">
@@ -31,9 +31,9 @@ $ open -a Xcode LeanScale.xcodeproj
 - Atomic commits to clear changes.
 
 #### some more detail
-- I Choosed MVC and StoryBoard because it was smal project and i can developed faster than other design pattern like MVVM.
-- URLSession and Codable because in the test description wrote please don't use any libraries, and in fact, URLSession have better than any libraries like Alamofre because they are swift default methods and if developer writes good thread for Requests and implemented a network layer with this, it gonna be a good performance for iOS app. On the other hand i have good knowledge on implementing network layer and data models with any libraries.
-- Implement fave tab and todo feature took me the longest time
-but it was my favourites part of this app.
+- I Chose MVC and StoryBoard because it was smal project and i could develop faster than other design pattern like MVVM.
+- URLSession and Codable because in the test description wrote please don't use any libraries, and in fact, URLSession has better than any libraries like Alamofre because they are swift default methods and if developer writes good thread for Requests and implemented a network layer with this, it gonna be a good performance for iOS app. On the other hand i have good knowledge on implementing network layer and data models with any libraries.
+- Implement fave tab and todo feature took me a long time
+but it was my favorite part in this app.
 - This Little app is ready for upload to store.
 - Thanks For your attention.
