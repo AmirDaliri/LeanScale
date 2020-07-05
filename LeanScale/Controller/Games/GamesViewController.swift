@@ -181,6 +181,12 @@ extension GamesViewController: UISearchBarDelegate {
             isInSearch = true
             networkManager.searchGame(pageSize: pageSize, page: page, query: query) { (response, error) in
                 guard !(response?.results?.isEmpty ?? false) && self.isLoadingTableView else {
+                    if self.page == 1 {
+                        DispatchQueue.main.async {
+                            TableViewHelper.EmptyMessage(message: "No game found.", viewController: self, tableView: self.tableView)
+                            self.tableView.reloadData()
+                        }
+                    }
                     return
                 }
                 if let newItems = response?.results, newItems.count > 0 {
