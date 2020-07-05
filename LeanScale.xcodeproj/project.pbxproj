@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3BBA1624B23A1D00F2EE4F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3BBA1524B23A1D00F2EE4F /* Reachability.swift */; };
 		8BB21173249E4E7C0008E27D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB21172249E4E7C0008E27D /* Extensions.swift */; };
 		8BB21177249E546B0008E27D /* GameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB21176249E546A0008E27D /* GameTableViewController.swift */; };
 		8BBF05B5249D5BE4009F9A65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF05B4249D5BE4009F9A65 /* AppDelegate.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B3BBA1524B23A1D00F2EE4F /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		8BB21172249E4E7C0008E27D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8BB21176249E546A0008E27D /* GameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewController.swift; sourceTree = "<group>"; };
 		8BBF05B1249D5BE4009F9A65 /* LeanScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeanScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				8BD4FC0F249E6DBB007B3AE3 /* Image Cashing */,
+				8B3BBA1524B23A1D00F2EE4F /* Reachability.swift */,
 				8BB21172249E4E7C0008E27D /* Extensions.swift */,
 				8BFEFA28249FD4DA00861D4E /* EmptyTableViewMessage.swift */,
 				8BDBC64D24AD049500267BA7 /* Strings.swift */,
@@ -482,6 +485,7 @@
 				8BD4FC38249E6DBB007B3AE3 /* FormatIndicatedCacheSerializer.swift in Sources */,
 				8BBF05F9249D6F5C009F9A65 /* GamesResult.swift in Sources */,
 				8BD4FC3D249E6DBB007B3AE3 /* Filter.swift in Sources */,
+				8B3BBA1624B23A1D00F2EE4F /* Reachability.swift in Sources */,
 				8BBF05F3249D6AC3009F9A65 /* Game.swift in Sources */,
 				8BD4FC34249E6DBB007B3AE3 /* ImageDownloader.swift in Sources */,
 				8BBF0607249D7015009F9A65 /* Genre.swift in Sources */,

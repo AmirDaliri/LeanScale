@@ -14,4 +14,5 @@ class Strings {
     static let noGenre = "No Genre Seted"
     static let noReddit = "reddit url not available."
     static let noUrl = "url not available."
+    static let notNet = "no network available!"
 }

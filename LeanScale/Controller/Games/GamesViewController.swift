@@ -34,6 +34,9 @@ class GamesViewController: UIViewController {
         super.viewDidLoad()
         
         // I'm Here...
+        NotificationCenter.default.addObserver(self, selector: #selector(statusManager),name: .flagsChanged,object: nil)
+        updateUserInterface()
+        
         getGames()
     }
     
@@ -79,6 +82,10 @@ class GamesViewController: UIViewController {
     // MARK: - API Method
     
     func getGames() {
+        guard Network.reachability.isReachable else {
+            self.exitAppAlert()
+            return
+        }
         runActivityIndicator()
         networkManager.getGameList(pageSize: pageSize, page: page) { (response, err) in
             guard !(response?.results?.isEmpty ?? false) && self.isLoadingTableView else {
@@ -117,6 +124,27 @@ class GamesViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    // MARK: - reachability Method
+    
+    func updateUserInterface() {
+        switch Network.reachability.status {
+        case .unreachable:
+            print("unreachable")
+        case .wwan:
+            print("wwan")
+        case .wifi:
+            print("wifi")
+        }
+        print("Reachability Summary")
+        print("Status:", Network.reachability.status)
+        print("HostName:", Network.reachability.hostname ?? "nil")
+        print("Reachable:", Network.reachability.isReachable)
+        print("Wifi:", Network.reachability.isReachableViaWiFi)
+    }
+    @objc func statusManager(_ notification: Notification) {
+        updateUserInterface()
     }
 }
 
@@ -175,6 +203,10 @@ extension GamesViewController: UITableViewDataSource, UITableViewDelegate {
 extension GamesViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let query = searchBar.text, query.count > 2 {
+            guard Network.reachability.isReachable else {
+                self.exitAppAlert()
+                return
+            }
             self.enteredQuery = query
             page = 1
             searchedGame = []
@@ -197,6 +229,7 @@ extension GamesViewController: UISearchBarDelegate {
                 DispatchQueue.main.async {
                     self.stopActivityIndicator()
                     self.page += 1
+                    self.tableView.backgroundView = nil
                     self.tableView.reloadData()
                     self.searchController.dismiss(animated: true, completion: nil)
                 }

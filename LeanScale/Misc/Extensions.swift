@@ -40,6 +40,19 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func exitAppAlert() {
+
+        let alert = UIAlertController(title: "Ops!", message: Strings.notNet, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action) in
+            UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+            // terminaing app in background
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                exit(EXIT_SUCCESS)
+            })
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 
